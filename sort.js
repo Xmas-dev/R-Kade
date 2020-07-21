@@ -1,10 +1,10 @@
 let values = [];
-let aux = [];
+// let aux = [];
 let w = 5;
 const quickButton = document.getElementById('quick');
 const mergeButton = document.getElementById('merge');
 const refresh = document.getElementById('refresh');
-let sorted = false;
+let initial = true;
 
 function setup() {
     createCanvas(1000, 500);
@@ -27,26 +27,38 @@ function draw() {
 }
 
 function interface(algo) {
-    if (algo == 'q')
-        quicksort(values, 0, values.length - 1);
-    else
-        mergesort(values, 0, values.length - 1);
+    if (!initial)
+        reset();
+    
+    switch(algo) {
+        case 'q': {
+            quicksort(values, 0, values.length - 1);
+            break;
+        }
+        case 'm' : {
+            let aux = [];
+            mergesort(values, aux, 0, values.length - 1);
+            break;
+        }
+    }
+    initial = false;
+
 }
 
-async function mergesort(arr, left, right) {
+async function mergesort(arr, aux, left, right) {
     if (left >= right) {
         return;
     }
     else {
         const mid = Math.floor(left + (right - left) / 2);        
-        await mergesort(arr, left, mid);
-        await mergesort(arr, mid + 1, right);
+        await mergesort(arr, aux, left, mid);
+        await mergesort(arr, aux, mid + 1, right);
 
-        await merge(arr, left, mid, right);
+        await merge(arr, aux, left, mid, right);
     }
 }
 
-async function merge(arr, left, mid, right) {
+async function merge(arr, aux, left, mid, right) {
     for (let i = 0; i < arr.length; i++) {
         aux[i] = arr[i];
     }
@@ -106,25 +118,9 @@ function sleep(ms) {
 }
 
 function main() {
-    refresh.addEventListener('click', () => {
-        reset();
-        sorted = false;
-    });
-
-    quickButton.addEventListener('click', () => {
-        if (sorted)
-            reset();
-        
-        interface('q');
-        sorted = true;
-    });
-    mergeButton.addEventListener('click', () => {
-        if (sorted)
-            reset();
-        
-        interface('m');
-        sorted = true;
-    });
+    refresh.addEventListener('click', () => reset());
+    quickButton.addEventListener('click', () => interface('q'));
+    mergeButton.addEventListener('click', () => interface('m'));
 }
 
 main();
