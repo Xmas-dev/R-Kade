@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <meta charset="UTF-8">
+    <script src="jquery-3.5.1.min.js"></script>
+    <title>R-Kade</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="style.css">
+    <!-- font awesome icon -->
+    <script src="https://kit.fontawesome.com/d3c408a353.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="progressbar"></div>
+    <!-- playground -->
+    <section class="banner" id="sec">
+      <header>
+        <!-- logo -->
+        <a href="home.html" class="logo"><span>R</span>-Kade</a>
+        <div id="toggle" onclick="toggle()"></div>
+      </header>
+      <!-- content -->
+      <div class="joy">
+        <!-- title -->
+        <h2>Work</h2>
+        <!-- msg -->
+        <p><span>Cue the music.</span></p>
+        <!-- card area -->
+        <div class="panel">
+          <a id="card1" href="sortVis.html">
+            <div class="iconBlock">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <div class="wordBlock">
+              <h1>Sorting Visualiser</h1>
+              <p>
+                <br>Ever wondered how sorting algorithms actually look like in action? 
+                Come check out how Quick Sort & Merge Sort work!
+              </p>
+            </div>
+          </a>
+          <a id="card2" href="#">
+            <div class="iconBlock">
+              <i class="fas fa-random"></i>
+            </div>
+            <div class="wordBlock">
+              <h1>Path Finder</h1>
+              <p>
+                <br>
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- side bar menu -->
+    <div id="navigation">
+      <ul>
+        <li data-text="Home"><a href="home.html" id="Home">Home</a></li>
+        <li data-text="Games"><a href="games.html" id="Games">Games</a></li>
+        <li data-text="Projects"><a href="projects.html" id="Projects">Projects</a></li>
+        <li data-text="Creator"><a href="contact.html" id="Contact">Creator</a></li>
+      </ul>
+    </div>
+
+
+    <!-- sidebar: page indication -->
+    <script type="text/javascript">
+      let pageName = document.getElementById('Projects');
+      pageName.style.textDecoration = "underline";
+    </script>
+
+    <!-- ipad responsive 1024px -->
+    <style>
+      .banner {
+        height: 130vh;
+      }
+
+      @media (max-width: 1024px) {
+        .banner {
+          height: 100vh;
+        }
+      }
+
+      .panel {
+        justify-content: space-around;
+      }
+
+      .joy h2{
+        font-size: 17.5vw;
+      }
+
+      :nth-child(1) .joy h2 {
+        background-image: url('picture_set/project1.jpg');
+        background-size: 45vw;
+        background-position: -15vw -10vh;
+      }
+    </style>
+
+    <!-- card appear effect -->
+    <script type="text/javascript">
+      const card1 = document.getElementById('card1');
+      const card2 = document.getElementById('card2');
+      card1.style.animation = "emerge 0.3s 0.9s linear forwards, fade-in 0.3s 0.9s linear forwards";
+      card2.style.animation = "emerge 0.3s 1.0s linear forwards, fade-in 0.3s 1.0s linear forwards";
+    </script>
+
+    <script src="app.js"> </script>
+
+  </body>
+</html>

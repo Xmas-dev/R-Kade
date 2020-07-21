@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <meta charset="UTF-8">
+    <script src="jquery-3.5.1.min.js"></script>
+    <title>R-Kade</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="style.css">
+    <!-- font awesome icon -->
+    <script src="https://kit.fontawesome.com/d3c408a353.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="progressbar"></div>
+    <!-- playground -->
+      <section class="banner" id="sec">
+        <header>
+          <!-- logo -->
+          <a href="home.html" class="logo"><span>R</span>-Kade</a>
+          <div id="toggle" onclick="toggle()"></div>
+        </header>
+
+        <!-- page title -->
+        <div class="creator">
+          <h2>'sup</h2>
+          <p><span>Who am I.</span></p>
+          <div class="intro">
+            <p>I'm Presley, a third year computer science major student
+               in the bay area who happened to find passion in web/graphic design
+               during the quarantine lockdown and created this (his first website) for fun.</p>
+          </div>
+          <ul class="list">
+            <li class="linkedin"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            <li class="email"><a href="#"><i class="far fa-envelope"></i></a></li>
+            <li class="instagram"><a href="https://www.instagram.com/saucygoober/"><i class="fab fa-instagram"></i></a></li>
+            <li class="github"><a href="https://github.com/Xmas-dev"><i class="fab fa-github"></i></a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+      <!-- side bar menu -->
+      <div id="navigation">
+        <ul>
+          <li data-text="Home"><a href="home.html" id="Home">Home</a></li>
+          <li data-text="Games"><a href="games.html" id="Games">Games</a></li>
+          <li data-text="Projects"><a href="projects.html" id="Projects">Projects</a></li>
+          <li data-text="Creator"><a href="contact.html" id="Contact">Creator</a></li>
+        </ul>
+
+    <script type="text/javascript">
+      let pageName = document.getElementById('Contact');
+      pageName.style.textDecoration = "underline";
+    </script>
+
+
+    <script type="text/javascript">
+      const link = document.querySelector('.linkedin');
+      const email = document.querySelector('.email');
+      const insta = document.querySelector('.instagram');
+      const git = document.querySelector('.github');
+
+      link.style.animation = "fade-in 0.3s 1.0s linear forwards, emerge 0.3s 1.0s linear forwards";
+      email.style.animation = "fade-in 0.3s 1.1s linear forwards, emerge 0.3s 1.1s linear forwards";
+      insta.style.animation = "fade-in 0.3s 1.2s linear forwards, emerge 0.3s 1.2s linear forwards";
+      git.style.animation = "fade-in 0.3s 1.3s linear forwards, emerge 0.3s 1.3s linear forwards";
+    </script>
+
+    <script src="app.js"> </script>
+
+  </body>
+</html>

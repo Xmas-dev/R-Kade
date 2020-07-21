@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <meta charset="UTF-8">
+    <script src="jquery-3.5.1.min.js"></script>
+    <title>R-Kade</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="style.css">
+    <!-- font awesome icon -->
+    <script src="https://kit.fontawesome.com/d3c408a353.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="progressbar"></div>
+    <!-- playground -->
+    <section class="banner" id="sec">
+      <header>
+        <!-- logo -->
+        <a href="home.html" class="logo"><span>R</span>-Kade</a>
+        <div id="toggle" onclick="toggle()"></div>
+      </header>
+
+      <!-- home page title -->
+      <div class="home-title">
+        <h1>This is <span style = "text-decoration: underline;">R</span>-Kade</h1>
+        <p>A Fully Responsive Vault of Fun Coding Projects</p>
+      </div>
+
+      <!-- home page description area -->
+      <div class="skewed first">
+        <div class="content-right">
+          <h2 class="desc-title">Explore</h2>
+          <p class="desc">
+            This site stores some of the most fun and interesting projects
+            that I've worked on. You can find a variety of programming 'gizmos' 
+            or amazing nostalgic arcade games right here!
+          </p>
+          <a class="startBtn" href="games.html">Let's go</a>
+        </div>
+      </div>
+      <div class="skewed second">
+        <div class="content-left">
+          <h2 class="desc-title">Build</h2>
+          <p class="desc">
+            This website is entirely built through the three essential site
+            building programming languages: HTML, Javascript, and CSS. Purley
+            through vanilla code, no external libraries or framework...yet!
+          </p>
+        </div>
+      </div>
+      <div class="skewed third">
+        <div class="content-right">
+          <h2 class="desc-title">About</h2>
+          <p class="desc">
+            This is my very first website and is something that I 
+            initially did it for fun during the quaratine lockdown,
+            which in turn became something that I am truly passionate
+            about, and I intend to build more interesting websites in 
+            the near future!
+          </p>
+        </div>
+      </div>
+
+      <!-- contact link -->
+      <ul class="home-contact">
+        <li><a href="#" class="contact-link"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="#" class="contact-link"><i class="far fa-envelope"></i></a></li>
+        <li><a href="https://www.instagram.com/saucygoober/" class="contact-link"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://github.com/Xmas-dev" class="contact-link"><i class="fab fa-github"></i></a></li>
+      </ul>
+    </section>
+
+    <!-- home page div design -->
+    <style>
+      .banner {
+        padding: 0;
+        background: url('picture_set/explore5.jpg'), rgba(0, 0, 0, 0.5);
+        background-blend-mode: darken;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 300vh;
+      }
+
+      @media (max-width: 1024px) {
+        .banner {
+          height: 225vh;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .banner {
+          height: 175vh;
+        }
+      }
+    </style>
+    <!-- side bar menu -->
+    <div id="navigation">
+      <ul>
+        <!-- Home: Creator, About, Whats in R-Kade -->
+        <li data-text="Home"><a href="home.html" id="Home">Home</a></li>
+        <li data-text="Games"><a href="games.html" id="Games">Games</a></li>
+        <li data-text="Projects"><a href="projects.html" id="Projects">Projects</a></li>
+        <li data-text="Creator"><a href="contact.html" id="Contact">Creator</a></li>
+      </ul>
+    </div>
+
+
+    <script src="app.js"> </script>
+
+    <script type="text/javascript">
+      let pageName = document.getElementById('Home');
+      pageName.style.textDecoration = "underline";
+    </script>
+
+  </body>
+</html>
