@@ -1,5 +1,4 @@
 let values = [];
-// let aux = [];
 let w = 5;
 const quickButton = document.getElementById('quick');
 const mergeButton = document.getElementById('merge');
@@ -118,7 +117,10 @@ function sleep(ms) {
 }
 
 function main() {
-    refresh.addEventListener('click', () => reset());
+    refresh.addEventListener('click', () => {
+        reset();
+        initial = true;
+    });
     quickButton.addEventListener('click', () => interface('q'));
     mergeButton.addEventListener('click', () => interface('m'));
 }
