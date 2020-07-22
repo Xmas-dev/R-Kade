@@ -69,7 +69,7 @@ async function merge(arr, aux, left, mid, right) {
 
     let i = left, j = mid + 1, k;
     for (k = left; i < (mid + 1) && j <= right; k++) {
-        await sleep(20);
+        await sleep(35);
         aux[i] < aux[j] ? arr[k] = aux[i++] : arr[k] = aux[j++];
     }
 
@@ -124,7 +124,7 @@ async function bubblesort(arr) {
 }
 
 async function swap(arr, x, y) {
-    await sleep(25);
+    await sleep(35);
     let temp = arr[x];
     arr[x] = arr[y];
     arr[y] = temp;
