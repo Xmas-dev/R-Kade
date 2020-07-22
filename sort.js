@@ -1,7 +1,8 @@
 let values = [];
-let w = 5;
+let w = 10;
 const quickButton = document.getElementById('quick');
 const mergeButton = document.getElementById('merge');
+const bubbleButton = document.getElementById('bubble');
 const refresh = document.getElementById('refresh');
 let initial = true;
 
@@ -37,6 +38,10 @@ function interface(algo) {
         case 'm' : {
             let aux = [];
             mergesort(values, aux, 0, values.length - 1);
+            break;
+        }
+        case 'b' : {
+            bubblesort(values);
             break;
         }
     }
@@ -105,6 +110,19 @@ async function partition (arr, start, end) {
     return pivotIndex;
 }
 
+async function bubblesort(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                await sleep(0) 
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
 async function swap(arr, x, y) {
     await sleep(25);
     let temp = arr[x];
@@ -117,12 +135,14 @@ function sleep(ms) {
 }
 
 function main() {
+    // bubblesort(values);
     refresh.addEventListener('click', () => {
         reset();
         initial = true;
     });
     quickButton.addEventListener('click', () => interface('q'));
     mergeButton.addEventListener('click', () => interface('m'));
+    bubbleButton.addEventListener('click', () => interface('b'));
 }
 
 main();
