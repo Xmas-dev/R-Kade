@@ -154,7 +154,7 @@ header #toggle:after {
   padding-bottom: 0.5em;
   border-bottom: 0.5px solid #636262;
   opacity: 0;
-  animation: shift-left 0.5s 0.5s ease-out forwards, fade-in 1s 0.5s ease-out forwards;
+  animation: shift-left 0.5s 0.8s ease-out forwards, fade-in 1s 0.8s ease-out forwards;
 }
 
 .home-title p {
@@ -163,7 +163,7 @@ header #toggle:after {
   letter-spacing: 0.1vw;
   padding-top: 1.7em;
   opacity: 0;
-  animation: shift-left 0.5s 0.7s ease-out forwards, fade-in 1s 0.7s ease-out forwards;
+  animation: shift-left 0.5s 1s ease-out forwards, fade-in 1s 1s ease-out forwards;
 }
 
 /* home page div */

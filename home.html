@@ -25,6 +25,7 @@
 
       <!-- home page title -->
       <div class="home-title">
+        <img src="picture_set/logo.png" alt="">
         <h1>This is <span style = "text-decoration: underline;">R</span>-Kade</h1>
         <p>A Fully Responsive Vault of Fun Coding Projects</p>
       </div>
@@ -82,6 +83,13 @@
         background-size: cover;
         background-attachment: fixed;
         height: 300vh;
+      }
+
+      .home-title img {
+        width: 5vw;
+        height: auto;
+        opacity: 0;
+        animation: fade-in 1s 0.2s forwards; 
       }
 
       @media (max-width: 1024px) {
