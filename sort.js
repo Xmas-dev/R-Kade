@@ -4,7 +4,7 @@ const quickButton = document.getElementById('quick');
 const mergeButton = document.getElementById('merge');
 const bubbleButton = document.getElementById('bubble');
 const selectButton = document.getElementById('select');
-const refresh = document.getElementById('refresh');
+const insertButton = document.getElementById('insert');
 let initial = true;
 
 function setup() {
@@ -47,6 +47,10 @@ function interface(algo) {
         }
         case 's' : {
             selectionsort(values);
+            break;
+        }
+        case 'i' : {
+            insertionsort(values);
             break;
         }
     }
@@ -144,6 +148,17 @@ async function selectionsort(arr) {
     }
 }
 
+async function insertionsort(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        for (let j = i; j > 0 && arr[j - 1] > arr[j]; j--) {
+            await sleep(30);
+            let temp = arr[j - 1];
+            arr[j - 1] = arr[j];
+            arr[j] = temp;
+        }
+    }
+}
+
 async function swap(arr, x, y) {
     await sleep(35);
     let temp = arr[x];
@@ -156,15 +171,11 @@ function sleep(ms) {
 }
 
 function main() {
-    // bubblesort(values);
-    refresh.addEventListener('click', () => {
-        reset();
-        initial = true;
-    });
     quickButton.addEventListener('click', () => interface('q'));
     mergeButton.addEventListener('click', () => interface('m'));
     bubbleButton.addEventListener('click', () => interface('b'));
     selectButton.addEventListener('click', () => interface('s'));
+    insertButton.addEventListener('click', () => interface('i'));
 }
 
 main();
