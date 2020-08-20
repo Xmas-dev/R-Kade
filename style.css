@@ -7,17 +7,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* customize scrollbar */
-#progressbar {
-  z-index: 9999;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 0.3vw;
-  border-radius: 0.12vw;
-  background: linear-gradient(#fff, #53adf7);
-}
-
 ::-webkit-scrollbar {
   width: 0;
 }

@@ -5,7 +5,12 @@ const mergeButton = document.getElementById('merge');
 const bubbleButton = document.getElementById('bubble');
 const selectButton = document.getElementById('select');
 const insertButton = document.getElementById('insert');
+let count_number = document.getElementById('counter');
+let indicator = document.getElementById('swapText');
+let allButtons = document.querySelector('.buttons');
 let initial = true;
+
+// swap counter 
 let count = 0;
 let prev_count = -1;
 
@@ -57,14 +62,19 @@ function interface(algo) {
         }
     }
     initial = false;
-
+    
+    // sorting in-progress indicator/restrict user from multiple clicks
+    indicator.style.background = "#FFC0CB";
+    allButtons.style.pointerEvents = "none";
     Timer();
 }
 
 function Timer() {
     var timer = setInterval(function() {
         if (prev_count === count) {
-            console.log(count);
+
+            // print out the swap count
+            count_number.innerHTML = count;
 
             // reset
             count = 0;
@@ -72,9 +82,17 @@ function Timer() {
 
             // end timer
             clearInterval(timer);
+
+            // indicates the sorting has finished/allowing user to click
+            indicator.style.background = "#fff";
+            allButtons.style.pointerEvents = "auto";
+            return;
         }
         prev_count = count;
-    }, 250);
+
+        // display the current swap count
+        count_number.innerHTML = count;
+    }, 200);
 }
 
 async function mergesort(arr, aux, left, right) {
@@ -172,7 +190,7 @@ async function selectionsort(arr) {
 async function insertionsort(arr) {
     for (let i = 1; i < arr.length; i++) {
         for (let j = i; j > 0 && arr[j - 1] > arr[j]; j--) {
-            await sleep(30);
+            await sleep(20);
             let temp = arr[j - 1];
             arr[j - 1] = arr[j];
             arr[j] = temp;

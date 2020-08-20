@@ -14,6 +14,10 @@
         <!-- logo -->
         <a href="../home.html" class="logo"><span>R</span>-Kade</a>
     </header>
+    <div class="text_display">
+        <span id="sortingText">Sorting Visualizer</span>
+        <span id="swapText">Swap Count: <span id="counter">0</span></span>
+    </div>
     <div class="buttons">
         <div class="sort" id="quick">
             <p>Quick Sort</p>
@@ -44,11 +48,39 @@
         height: auto !important;
         position: relative;
         display: block;
-        margin: auto;
+        margin: 5vh auto 0 auto;
         border-radius: 20px;
     }
+
+    .text_display {
+        position: relative;
+        text-align: center;
+        margin-top: 5vh;
+    }
+
+    .text_display #sortingText {
+        color: #fff;
+        font-size: 2em;
+        letter-spacing: 0.5vw;
+        font-weight: 300;
+    }
+
+    .text_display #swapText {
+        position: absolute;
+        padding: 5px;
+        width: 200px;
+        text-align: left;
+        color: #000;
+        background: white;
+        right: 3.5vw;
+        bottom: 1vh;
+        font-size: 1.2em;
+        font-weight: 500;
+        border-radius: 10px;
+    }
+
     .buttons {
-        top: 85%;
+        margin-top: 5vh;
         position: relative;
         display: flex;
         justify-content: center;
