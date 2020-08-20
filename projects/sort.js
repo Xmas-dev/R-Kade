@@ -40,23 +40,28 @@ function interface(algo) {
 
     switch(algo) {
         case 'q': {
+            quickButton.classList.add('glow');
             quicksort(values, 0, values.length - 1);
             break;
         }
         case 'm' : {
+            mergeButton.classList.add('glow');
             let aux = [];
             mergesort(values, aux, 0, values.length - 1);
             break;
         }
         case 'b' : {
+            bubbleButton.classList.add('glow');
             bubblesort(values);
             break;
         }
         case 's' : {
+            selectButton.classList.add('glow');
             selectionsort(values);
             break;
         }
         case 'i' : {
+            insertButton.classList.add('glow');
             insertionsort(values);
             break;
         }
@@ -66,10 +71,10 @@ function interface(algo) {
     // sorting in-progress indicator/restrict user from multiple clicks
     indicator.style.background = "#FFC0CB";
     allButtons.style.pointerEvents = "none";
-    Timer();
+    Timer(algo);
 }
 
-function Timer() {
+function Timer(algo) {
     var timer = setInterval(function() {
         if (prev_count === count) {
 
@@ -86,6 +91,31 @@ function Timer() {
             // indicates the sorting has finished/allowing user to click
             indicator.style.background = "#fff";
             allButtons.style.pointerEvents = "auto";
+
+            // remove algorithm indicator
+            switch(algo) {
+                case 'q': {
+                    quickButton.classList.remove('glow');
+                    break;
+                }
+                case 'm' : {
+                    mergeButton.classList.remove('glow');
+
+                    break;
+                }
+                case 'b' : {
+                    bubbleButton.classList.remove('glow');
+                    break;
+                }
+                case 's' : {
+                    selectButton.classList.remove('glow');
+                    break;
+                }
+                case 'i' : {
+                    insertButton.classList.remove('glow');
+                    break;
+                }
+            }
             return;
         }
         prev_count = count;
