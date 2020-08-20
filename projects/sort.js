@@ -6,6 +6,8 @@ const bubbleButton = document.getElementById('bubble');
 const selectButton = document.getElementById('select');
 const insertButton = document.getElementById('insert');
 let initial = true;
+let count = 0;
+let prev_count = -1;
 
 function setup() {
     createCanvas(1000, 500);
@@ -30,7 +32,7 @@ function draw() {
 function interface(algo) {
     if (!initial)
         reset();
-    
+
     switch(algo) {
         case 'q': {
             quicksort(values, 0, values.length - 1);
@@ -56,6 +58,19 @@ function interface(algo) {
     }
     initial = false;
 
+    var timer = setInterval(function() {
+        if (prev_count === count) {
+            console.log(count + " swaps used!");
+
+            // reset
+            count = 0;
+            prev_count = -1;
+
+            // end timer
+            clearInterval(timer);
+        }
+        prev_count = count;
+    }, 500)
 }
 
 async function mergesort(arr, aux, left, right) {
@@ -124,6 +139,7 @@ async function bubblesort(arr) {
         for (let j = 0; j < arr.length - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
                 await sleep(0) 
+                count++;
                 let temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
@@ -152,6 +168,7 @@ async function insertionsort(arr) {
     for (let i = 1; i < arr.length; i++) {
         for (let j = i; j > 0 && arr[j - 1] > arr[j]; j--) {
             await sleep(30);
+            count++;
             let temp = arr[j - 1];
             arr[j - 1] = arr[j];
             arr[j] = temp;
@@ -164,6 +181,7 @@ async function swap(arr, x, y) {
     let temp = arr[x];
     arr[x] = arr[y];
     arr[y] = temp;
+    count++;
 }
 
 function sleep(ms) {
