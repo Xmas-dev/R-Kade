@@ -58,9 +58,13 @@ function interface(algo) {
     }
     initial = false;
 
+    Timer();
+}
+
+function Timer() {
     var timer = setInterval(function() {
         if (prev_count === count) {
-            console.log(count + " swaps used!");
+            console.log(count);
 
             // reset
             count = 0;
@@ -70,7 +74,7 @@ function interface(algo) {
             clearInterval(timer);
         }
         prev_count = count;
-    }, 500)
+    }, 250);
 }
 
 async function mergesort(arr, aux, left, right) {
@@ -95,6 +99,7 @@ async function merge(arr, aux, left, mid, right) {
     for (k = left; i < (mid + 1) && j <= right; k++) {
         await sleep(35);
         aux[i] < aux[j] ? arr[k] = aux[i++] : arr[k] = aux[j++];
+        count++;
     }
 
     while (i < (mid + 1)) {
@@ -139,10 +144,10 @@ async function bubblesort(arr) {
         for (let j = 0; j < arr.length - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
                 await sleep(0) 
-                count++;
                 let temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
+                count++;
             }
         }
     }
@@ -168,10 +173,10 @@ async function insertionsort(arr) {
     for (let i = 1; i < arr.length; i++) {
         for (let j = i; j > 0 && arr[j - 1] > arr[j]; j--) {
             await sleep(30);
-            count++;
             let temp = arr[j - 1];
             arr[j - 1] = arr[j];
             arr[j] = temp;
+            count++;
         }
     }
 }
