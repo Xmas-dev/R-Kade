@@ -100,7 +100,6 @@ function Timer(algo) {
                 }
                 case 'm' : {
                     mergeButton.classList.remove('glow');
-
                     break;
                 }
                 case 'b' : {
