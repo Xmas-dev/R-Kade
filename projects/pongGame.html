@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R-Kade</title>
+    <!-- p5 online hosted library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="https://kit.fontawesome.com/d3c408a353.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../picture_set/favicon-96x96.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <!-- logo -->
+        <a href="../home.html" class="logo"><span>R</span>-Kade</a>
+    </header>
+    <div class="text_display">
+        <span id="sortingText">Pong</span>
+    </div>
+    <canvas id="pong" width = "600" height = "400"></canvas>
+    <script src="pong.js"></script>
+</body>
+
+<style>
+    body {
+        background-color: #2a2f3b;
+    }
+
+    canvas {
+        position: relative;
+        margin: 5vh auto 0 auto;
+        width: 50%;
+        height: auto;
+        display: block;
+    }
+
+    .text_display {
+        position: relative;
+        text-align: center;
+        color: #fff;
+        margin-top: 5vh;
+        font-size: 2.5em;
+        font-weight: 500;
+        letter-spacing: 0.1vw;
+    }
+</style>
+</html>
