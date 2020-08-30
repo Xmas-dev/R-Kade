@@ -592,6 +592,7 @@ header #toggle:after {
   padding: 0 1vw;
   border-radius: 1.5vw;
   border: 0.12vw solid #2a2f3b;
+  cursor: pointer;
 }
 
 .creator .list a {
