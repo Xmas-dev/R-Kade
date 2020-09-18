@@ -95,7 +95,7 @@ header #toggle:after {
   transition: 0.3s;
 }
 
-/* Playground */
+/* Slider */
 .banner.active header #toggle:before {
   top: 50%;
   left: 50%;
@@ -690,6 +690,7 @@ header #toggle:after {
   }
 }
 
+/******************************* RESPONSIVE **************************/
 /* ipad size responsive vertical*/
 @media (max-width: 1024px) {
   header .logo {
