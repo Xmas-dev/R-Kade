@@ -177,11 +177,13 @@ async function partition (arr, start, end) {
 
     for (let i = start; i < end; i++) {
         if (arr[i] < pivotValue) {
-            await swap(arr, pivotIndex, i);
+            await sleep(35);
+            swap(arr, pivotIndex, i);
             pivotIndex++;
         }
     }
-    await swap(arr, pivotIndex, end);
+    await sleep(35);
+    swap(arr, pivotIndex, end);
 
     return pivotIndex;
 }
@@ -191,10 +193,7 @@ async function bubblesort(arr) {
         for (let j = 0; j < arr.length - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
                 await sleep(0) 
-                let temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-                count++;
+                swap(arr, j, j + 1);
             }
         }
     }
@@ -211,7 +210,8 @@ async function selectionsort(arr) {
             }
         }
         if (i != min) {
-            await swap(arr, i, min);
+            await sleep(60);
+            swap(arr, i, min);
         }
     }
 }
@@ -220,16 +220,12 @@ async function insertionsort(arr) {
     for (let i = 1; i < arr.length; i++) {
         for (let j = i; j > 0 && arr[j - 1] > arr[j]; j--) {
             await sleep(20);
-            let temp = arr[j - 1];
-            arr[j - 1] = arr[j];
-            arr[j] = temp;
-            count++;
+            swap(arr, j - 1, j);
         }
     }
 }
 
 async function swap(arr, x, y) {
-    await sleep(35);
     let temp = arr[x];
     arr[x] = arr[y];
     arr[y] = temp;
