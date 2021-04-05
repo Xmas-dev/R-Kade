@@ -10,7 +10,10 @@ let indicator = document.getElementById('swapText');
 let allButtons = document.querySelector('.buttons');
 let initial = true;
 
-// swap counter 
+// stores the runtime comparisons for each algorithm
+let comparisons = 0;
+
+// for program to know when to stop counting
 let count = 0;
 let prev_count = -1;
 
@@ -77,13 +80,10 @@ function interface(algo) {
 function Timer(algo) {
     var timer = setInterval(function() {
         if (prev_count === count) {
-
-            // print out the swap count
-            count_number.innerHTML = count;
-
             // reset
             count = 0;
             prev_count = -1;
+            comparisons = 0;
 
             // end timer
             clearInterval(timer);
@@ -120,7 +120,7 @@ function Timer(algo) {
         prev_count = count;
 
         // display the current swap count
-        count_number.innerHTML = count;
+        count_number.innerHTML = comparisons;
     }, 200);
 }
 
@@ -145,6 +145,7 @@ async function merge(arr, aux, left, mid, right) {
     let i = left, j = mid + 1, k;
     for (k = left; i < (mid + 1) && j <= right; k++) {
         await sleep(35);
+        comparisons++;
         aux[i] < aux[j] ? arr[k] = aux[i++] : arr[k] = aux[j++];
         count++;
     }
@@ -176,6 +177,7 @@ async function partition (arr, start, end) {
     let pivotIndex = start;
 
     for (let i = start; i < end; i++) {
+        comparisons++;
         if (arr[i] < pivotValue) {
             await sleep(35);
             swap(arr, pivotIndex, i);
@@ -191,6 +193,7 @@ async function partition (arr, start, end) {
 async function bubblesort(arr) {
     for (let i = 0; i < arr.length - 1; i++) {
         for (let j = 0; j < arr.length - i - 1; j++) {
+            comparisons++;
             if (arr[j] > arr[j + 1]) {
                 await sleep(0) 
                 swap(arr, j, j + 1);
@@ -205,6 +208,7 @@ async function selectionsort(arr) {
     for (let i = 0; i < arr.length - 1; i++) {
         min = i;
         for (let j = arr.length - 1; j > i; j--) {
+            comparisons++;
             if (arr[min] > arr[j]) {
                 min = j;
             }
@@ -218,9 +222,12 @@ async function selectionsort(arr) {
 
 async function insertionsort(arr) {
     for (let i = 1; i < arr.length; i++) {
-        for (let j = i; j > 0 && arr[j - 1] > arr[j]; j--) {
-            await sleep(20);
-            swap(arr, j - 1, j);
+        for (let j = i; j > 0; j--) {
+            comparisons++;
+            if (arr[j - 1] > arr[j]) {
+                await sleep(20);
+                swap(arr, j - 1, j);
+            }
         }
     }
 }

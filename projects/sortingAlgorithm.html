@@ -1,14 +1,18 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>R-Kade</title>
     <!-- p5 online hosted library -->
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
-    <script src="https://kit.fontawesome.com/d3c408a353.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d3c408a353.js"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../style.css">
-    <link rel="icon" href="../picture_set/favicon-96x96.png" type="image/x-icon">
+    <link rel="icon" href="../picture_set/favicon-96x96.png"
+        type="image/x-icon">
 </head>
+
 <body>
     <header>
         <!-- logo -->
@@ -16,7 +20,7 @@
     </header>
     <div class="text_display">
         <span id="sortingText">Sorting Visualizer</span>
-        <span id="swapText">Swap Count: <span id="counter">0</span></span>
+        <span id="swapText">Comparisons: <span id="counter">0</span></span>
     </div>
     <div class="buttons">
         <div class="sort" id="quick">
@@ -34,8 +38,8 @@
         <div class="sort" id="insert">
             <p>Insertion Sort</p>
         </div>
-    </div> 
-    
+    </div>
+
     <script src="sort.js"></script>
 </body>
 
@@ -43,6 +47,7 @@
     body {
         background-color: #2a2f3b;
     }
+
     canvas {
         width: 65% !important;
         height: auto !important;
@@ -88,26 +93,29 @@
         font-weight: 500;
         font-size: 1.5vw;
     }
+
     .buttons div {
         display: flex;
-        padding: 0.5em 1em 0.5em 1em; 
+        padding: 0.5em 1em 0.5em 1em;
         margin: 0 1.20em 0 1.20em;
         border: 1px solid #2a2f3b;
         border-radius: 10px;
-        box-shadow: -0.2vw -0.2vw 0.24vw rgba(255,255,255,0.05),
-                    0.2vw 0.2vw 0.24vw rgba(0, 0, 0, 0.2);
+        box-shadow: -0.2vw -0.2vw 0.24vw rgba(255, 255, 255, 0.05),
+            0.2vw 0.2vw 0.24vw rgba(0, 0, 0, 0.2);
         transition: 0.5s;
-    } 
+    }
+
     .buttons div:hover {
         color: rgb(183, 228, 247);
         border: 1px solid rgb(183, 228, 247);
-        filter: brightness(1.2); 
+        filter: brightness(1.2);
         cursor: pointer;
     }
 
     .glow {
         color: rgb(183, 228, 247);
-        filter: brightness(1.2); 
+        filter: brightness(1.2);
     }
 </style>
+
 </html>
